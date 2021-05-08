@@ -1,6 +1,4 @@
 # Montecarlo
-Antonio Gallego May 2021
-
 After reading this wonderful article on Monte Carlo methods found via Hacker News...
 
 https://ggcarvalho.dev/posts/montecarlo/
