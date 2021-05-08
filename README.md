@@ -11,8 +11,7 @@ https://en.wikipedia.org/wiki/Monte_Carlo_method
 
 https://en.wikipedia.org/wiki/Monty_Hall_problem'
 
-
-'''
+```
 $ python montecarlo.py
 Pi's Montecarlo approach
 After 100000 rounds Pi approaches 3.1406
@@ -49,4 +48,4 @@ After 1000000 tests area is determined as 1.7699398187023536
 Option Pricing Using the Black-Scholes Model, discretized version of the BSM model (Euler discretization)
 Initial value: 100.0 Strike price: 105.0 Maturity: 1.0 Risk free short rate: 0.05 Volatility 0.2 Tests: 250000
 European Option Value: 7.42013365
-''''
+```
