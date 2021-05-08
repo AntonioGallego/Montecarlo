@@ -5,7 +5,7 @@ Wonderful article on Montecarlo methods found in Hacker News
 
 https://ggcarvalho.dev/posts/montecarlo/
 
-The code was Go, as an exercise I rewrote it in Python
+The code was Go. As an exercise I went through it rewriting it in Python
 
 https://en.wikipedia.org/wiki/Monte_Carlo_method
 
