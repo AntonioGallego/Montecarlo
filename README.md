@@ -49,5 +49,10 @@ After 1000000 tests area is determined as 1.7699398187023536
 
 Option Pricing Using the Black-Scholes Model, discretized version of the BSM model (Euler discretization)
 Initial value: 100.0 Strike price: 105.0 Maturity: 1.0 Risk free short rate: 0.05 Volatility 0.2 Tests: 250000
-European Option Value: 7.42013365
+Benchmark value using the BSM formula and (our) Monte Carlo integrator
+European Option Value: 7.94323328
+Monte Carlo estimator for the European call option, exploring 50000 paths of 50 steps each
+European Option Value: 7.524
+
+Process finished with exit code 0
 ```
