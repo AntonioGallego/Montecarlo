@@ -1,17 +1,19 @@
 # Montecarlo
 Antonio Gallego May 2021
 
-Monte Carlo methods are a broad class of computational algorithms that rely on repeated random sampling to obtain numerical results. Invented by von Neumann, Ulam and Metropolis in the context Manhattan Project, this technique is used throughout areas such as physics, finance, engineering, project management, insurance, and transportation, where a numerical result is needed and the underlying theory is difficult and/or unavailable.
-
-Wonderful article on Montecarlo methods found in Hacker News
+After reading this wonderful article on Monte Carlo methods found via Hacker News...
 
 https://ggcarvalho.dev/posts/montecarlo/
+
+... we'll use Monte Carlo methods and some Python code to estimate pi, e, some 'Birthday Paradox' chances, the outcome of the (in)famous Monty Hall, several definite integrals and an option price using the Black-Scholes Model.
+
+Monte Carlo methods are a broad class of computational algorithms that rely on repeated random sampling to obtain numerical results. Invented by von Neumann, Ulam and Metropolis in the context Manhattan Project, this technique is used throughout areas such as physics, finance, engineering, project management, insurance, and transportation, where a numerical result is needed and the underlying theory is difficult and/or unavailable.
 
 """To apply the Monte Carlo method, the analyst constructs a mathematical model that simulates a real system. A large number of random sampling of the model is applied yielding a large number of random samples of output results from the model. […] The method is based on running the model many times as in random sampling. For each sample, random variates are generated on each input variable; computations are run through the model yielding random outcomes on each output variable. Since each input is random, the outcomes are random. In the same way, they generated thousands of such samples and achieved thousands of outcomes for each output variable."""
 
 """Monte Carlo methods are based on the analogy between probability and volume. The mathematics of measure formalizes the intuitive notion of probability, associating an event with a set of outcomes and defining the probability of the event to be its volume or measure relative to that of a universe of possible outcomes. Monte Carlo uses this identity in reverse, calculating the volume of a set by interpreting the volume as a probability. In the simplest case, this means sampling randomly from a universe of possible outcomes and taking the fraction of random draws that fall in a given set as an estimate of the set’s volume. The law of large numbers ensures that this estimate converges to the correct value as the number of draws increases. The central limit theorem provides information about the likely magnitude of the error in the estimate after a finite number of draws."""
 
-The code was Go. As an exercise I went through it rewriting it in Python
+The article code was written in Go. As an exercise I went through it rewriting it in Python. Here's a typical run:
 
 ```
 $ python montecarlo.py
