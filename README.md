@@ -1,4 +1,4 @@
-# Montecarlo
+# Monte Carlo methods using Python
 After reading this wonderful article on Monte Carlo methods found via Hacker News...
 
 https://ggcarvalho.dev/posts/montecarlo/
