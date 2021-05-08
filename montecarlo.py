@@ -7,7 +7,7 @@ https://en.wikipedia.org/wiki/Monte_Carlo_method
 https://en.wikipedia.org/wiki/Monty_Hall_problem'
 '''
 
-from random import random,randint,choice
+from random import random,randint,choice,normalvariate
 import math
 
 class Point(object):
@@ -63,6 +63,12 @@ def bsmCallValue(S0, K, T, r, sigma, n):
     mciD1 = montecarlo_integrator(gaussian, -20.0, d1, n)
     mciD2 = montecarlo_integrator(gaussian, -20.0, d2, n)
     return S0*mciD1 - K*math.exp(-r*T)*mciD2
+
+def rectifier(x):
+    'calculates max(x, 0)'
+    if x >= 0.0:
+        return x
+    return 0.0
 
 def main():
     print("Pi's Montecarlo approach")
@@ -159,7 +165,37 @@ def main():
     optionPrice = bsmCallValue(S0, K, T, r, sigma, numPoints)
     numPoints = 250000
     print("Initial value: {} Strike price: {} Maturity: {} Risk free short rate: {} Volatility {} Tests: {}".format(S0, K, T, r, sigma, numPoints))
+    print("Benchmark value using the BSM formula and (our) Monte Carlo integrator")
     print("European Option Value: {:.8f}".format(optionPrice))
+
+    # Parameters
+    S0 = 100.0 # initial value
+    K = 105.0 # strike price
+    T = 1.0 # maturity
+    r = 0.05 # risk free short rate
+    sigma = 0.2 # volatility
+    M = 50 # number of time steps
+    dt = T / M # length of time interval
+    I = 50000 # number of paths / simulations
+    S=[] # Paths
+    # Simulating  numPaths paths with M time steps
+    for i in range(1,I+1):
+        path=[]
+        for t in range(0,M+1):
+            if t == 0:
+                path=[S0]
+            else:
+                z = normalvariate(0,1) #  (mean = 0, stddev = 1)
+                St = path[t-1] * math.exp((0.5* sigma * sigma * dt) + (sigma * math.sqrt(dt) * z))
+                path.append(St)
+        S.append(path)
+    # Calculating the Monte Carlo estimator
+    sumVal = 0
+    for p in S:
+        sumVal += rectifier(p[-1] - K)
+    C0 = math.exp(-r * T) * sumVal / I
+    print("Monte Carlo estimator for the European call option, exploring {} paths of {} steps".format(I,M))
+    print("European Option Value: {:.3f}".format(C0))
 
 if __name__ == "__main__":
     main()
