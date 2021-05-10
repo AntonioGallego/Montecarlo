@@ -2,9 +2,7 @@
 Antonio Gallego May 2021
 Wonderful article on Montecarlo methods found in Hacker News
 https://ggcarvalho.dev/posts/montecarlo/
-The code was Go, as an exercise I rewrote it in Python
-https://en.wikipedia.org/wiki/Monte_Carlo_method
-https://en.wikipedia.org/wiki/Monty_Hall_problem'
+The code was in Go, as an exercise I rewrote it in Python
 '''
 
 from random import random,randint,choice,normalvariate
